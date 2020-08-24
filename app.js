@@ -11,12 +11,10 @@ const r=express.Router()
 app.get("/",(req,res)=>{
     res.render("index")
 })
-app.get("/userPanel",(req,res)=>{
+app.use('/userPanel',(req,res)=>{
     res.render("userPanel")
 })
-app.get("/userPanel/createProduct",(req,res)=>{
-    res.render("userPanel")
-})
+
 
 app.get("/singleProduct",(req,res)=>{
     res.render("product")

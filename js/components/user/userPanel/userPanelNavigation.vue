@@ -4,6 +4,7 @@
             <ul>
                 <li @click="toggleUserPanelNavigation()"> <router-link to="/userPanel">پروفایل</router-link> <img class='icon' src="/images/profile.png" alt=""></li>
                 <li @click="toggleUserPanelNavigation()"><router-link to="/userPanel/createProduct">اضافه کردن محصول برای فروش</router-link><img src="/images/sell.png" class='icon' alt=""></li>
+                <li @click="toggleUserPanelNavigation()"><router-link to="/userPanel/usersList">لیست کاربران</router-link><img src="/images/sell.png" class='icon' alt=""></li>
 
             </ul>
         </div>
@@ -53,7 +54,7 @@ import {mapActions} from 'vuex'
 
     }
     #userPanelNavigationWrapper{
-        background:rgb(20,40,80);
+        background:rgb(74, 97, 143);
         position:absolute;
         right:0;
         top:0;

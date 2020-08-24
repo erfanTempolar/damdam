@@ -27,3 +27,34 @@
 .uploadImage:hover{
 	background-color: #0a9959;
 }
+
+
+
+.danger{
+	padding:10px 20px 10px 20px;
+	border-radius: 5px;
+	background: #f32c2c;
+	border:0;
+	font-size:15pt;
+	color:white;
+	font-family: 'yekan';
+	cursor: pointer;
+}
+.danger:hover{
+	background:#fa1515
+}
+
+
+.done{
+	padding:10px 10px 10px 10px;
+	border-radius: 5px;
+	background: #dd2049;
+	border:0;
+	font-size:15pt;
+	color:white;
+	font-family: 'yekan';
+	cursor: pointer;
+}
+.done:hover{
+	background:#da113c
+}
