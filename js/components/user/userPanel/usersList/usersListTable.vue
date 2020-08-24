@@ -1,32 +1,34 @@
 <template>
-        <div id="table">
-            <table>
-                <tr>
-                    <th>نام</th>
-                    <th>ایمیل</th>
-                </tr>
-                <tr>
-                    <td>john.doe</td>
-                    <td>john.doe@gmail.com</td>
-                    <td><button class='danger'>حذف کاربر</button></td>
-                </tr>
-                <tr>
-                    <td>john.doe</td>
-                    <td>john.doe@gmail.com</td>
-                    <td><button class='danger'>حذف کاربر</button></td>
-                </tr>
-                <tr>
-                    <td>john.doe</td>
-                    <td>john.doe@gmail.com</td>
-                    <td><button class='danger'>حذف کاربر</button></td>
-                </tr>
-                <tr>
-                    <td>john.doe</td>
-                    <td>john.doe@gmail.com</td>
-                    <td><button class='danger'>حذف کاربر</button></td>
-                </tr>
-            </table>
-        </div>
+        <transition name='slide'>
+            <div id="table">
+                <table>
+                    <tr>
+                        <th>نام</th>
+                        <th>ایمیل</th>
+                    </tr>
+                    <tr>
+                        <td>john.doe</td>
+                        <td>john.doe@gmail.com</td>
+                        <td><button class='danger'>حذف کاربر</button></td>
+                    </tr>
+                    <tr>
+                        <td>john.doe</td>
+                        <td>john.doe@gmail.com</td>
+                        <td><button class='danger'>حذف کاربر</button></td>
+                    </tr>
+                    <tr>
+                        <td>john.doe</td>
+                        <td>john.doe@gmail.com</td>
+                        <td><button class='danger'>حذف کاربر</button></td>
+                    </tr>
+                    <tr>
+                        <td>john.doe</td>
+                        <td>john.doe@gmail.com</td>
+                        <td><button class='danger'>حذف کاربر</button></td>
+                    </tr>
+                </table>
+            </div>
+        </transition>
 
 </template>
 
@@ -36,6 +38,7 @@
     #table{
         overflow-x:scroll;
         margin-top:20px;
+        transition: all 1s;
     }
     table{
         
@@ -52,6 +55,14 @@
     }
     th{
         background: #4CAF50;
+    }
+    @keyframes slide {
+        from{
+            transform:translateY(20px)
+        }
+        to{
+            transform:translateY(0)
+        }
     }
 
 
