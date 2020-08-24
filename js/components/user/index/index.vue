@@ -9,11 +9,19 @@
 		<flip-card></flip-card>
 		<div id="allCards" class='shouldCollapse'>
 			<card cardTitle="بیشترین کلیک شده" descs='فلان لان فلان خیلی فلا هی فلان بازم فلان' :products='getProducts()'></card>
+			
+		</div>
+		<div class="digiCardIndex">
+			<digi-card :imgs='JSON.stringify(["/images/digi1.jpg","/images/digi2.jpg","/images/digi1.jpg","/images/digi2.jpg"])'></digi-card>
 		</div>
 	</div>
 </template>
 
 <style>
+	.digiCardIndex{
+		margin-top:20px;
+		margin-bottom: 20px;
+	}
 	#topOfIndex{
 		background: #d3d3d3;
 	}
@@ -104,6 +112,7 @@
 
 
 <script>
+	import digiCard from "./digiCard/digiCard.vue"
 	import slider from "./slider/slider.vue"
 	import card from './card/card.vue'
 	import flipCard from './flipCard/flipCard.vue'
@@ -113,7 +122,8 @@
 			slider,
 			card,
 			categorie,
-			flipCard
+			flipCard,
+			digiCard
 		},
 		data(){
 			return{

@@ -7,7 +7,7 @@
             </div>
             <div id="allCats">
                 <ul>
-                    <li>دست1 <arrow></arrow>
+                    <li class="parentLi">دست1 <arrow></arrow>
                         <div class="subMenu">
                             <div class="subTitleWrapper">
                                 <div class="SubTitle"><p>دسته 1</p></div>
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>دست1 <arrow></arrow>
+                    <li class="parentLi">دست1 <arrow></arrow>
                     <div class="subMenu">
                             <div class="subTitleWrapper">
                                 <div class="SubTitle"><p>دسته 1</p></div>
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>دست1 <arrow></arrow>
+                    <li class="parentLi">دست1 <arrow></arrow>
                     <div class="subMenu">
                             <div class="subTitleWrapper">
                                 <div class="SubTitle"><p>دسته 1</p></div>
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>دست1 <arrow></arrow>
+                    <li class="parentLi">دست1 <arrow></arrow>
                     <div class="subMenu">
                             <div class="subTitleWrapper">
                                 <div class="SubTitle"><p>دسته 1</p></div>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>دست1 <arrow></arrow>
+                    <li class="parentLi">دست1 <arrow></arrow>
                     <div class="subMenu">
                             <div class="subTitleWrapper">
                                 <div class="SubTitle"><p>دسته 1</p></div>
@@ -96,11 +96,6 @@
         components:{
             ham,
             arrow
-        },
-        mounted(){
-            // const arrow=document.querySelector(".arrow")
-            // const allSubMenus=document.qquerySelectorAll('.subMenu')
-            // console.log(arrow)
         }
     }
 </script>
@@ -125,9 +120,9 @@
     }
     .subMenu{
         position: absolute;
-        left:10px;
+        /* left:0; */
         display:none;
-        left:218px;
+        /* left:218px; */
         z-index:667;
         background-color: white;
         height:max-content;
@@ -165,12 +160,14 @@
     ul{
         width:100%
     }
-    ul li{
+    ul>li{
         line-height: 2rem;
         width:100%;
         display:flex;
-        position: relative;
         justify-content: space-between;
+    }
+    .parentLi{
+        position: relative;
     }
     #hamCats{
         display:flex;

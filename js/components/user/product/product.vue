@@ -5,13 +5,13 @@
             <hr>
             <div class="chooseSection">
                 <div class="section">
-                    <p @click='currentComponent="commentSection"'>نظرات کاربران</p>
+                    <p @click='currentComponent="commentSection",changeButtonColor($event)'>نظرات کاربران</p>
                 </div>
                 <div class="section">
-                    <p @click='currentComponent="componyDetali"'>مشخصات شرکت</p>
+                    <p @click='currentComponent="componyDetali",changeButtonColor($event)'>مشخصات شرکت</p>
                 </div>
                 <div class="section">
-                    <p @click='currentComponent="productDescs"'>توضیحات محصول</p>
+                    <p @click='currentComponent="productDescs",changeButtonColor($event)'>توضیحات محصول</p>
                 </div>
             </div>
             <hr>
@@ -44,6 +44,15 @@
             commentSection,
             productDescs,
             componyDetali
+        },
+        methods:{
+            changeButtonColor(e){
+                const secs=document.querySelectorAll(".chooseSection p")
+                secs.forEach(sec=>{
+                    sec.style.color="rgb(105, 98, 209)"
+                })
+                e.target.style.color="rgb(229,46,113)"
+            }
         }
 
     }
