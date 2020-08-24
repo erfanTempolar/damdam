@@ -7,7 +7,7 @@
 			</div>			
 		</div>
 		<flip-card></flip-card>
-		<div id="allCards">
+		<div id="allCards" class='shouldCollapse'>
 			<card cardTitle="بیشترین کلیک شده" descs='فلان لان فلان خیلی فلا هی فلان بازم فلان' :products='getProducts()'></card>
 		</div>
 	</div>
@@ -91,6 +91,11 @@
 		}
 		#sideSliderCats{
 			display:none
+		}
+	}
+	@media (max-width:800px){
+		#topOfIndexWrapper{
+			padding:0
 		}
 	}
 

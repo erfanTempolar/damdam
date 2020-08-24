@@ -1,5 +1,5 @@
 <template>
-    <div id="userPanel" class='mainItemForUserPanel'>
+    <div id="userPanel" class='mainItemForUserPanel shouldCollapse'>
         <div id="userPanelWrapper">
             <div id="userPanelNavigationWrapper">
                 <button class='submit' @click='toggleUserPanelNavigation'>منوی کاربری</button>

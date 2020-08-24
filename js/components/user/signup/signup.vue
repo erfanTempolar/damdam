@@ -1,5 +1,5 @@
 <template>
-    <div id="signup">
+    <div id="signup" class='shouldCollapse'>
         <div id="signupWrapper" v-if='signupFormShouldShowMethod()'>
             <div class="title">
                 <p>ثبت نام</p>

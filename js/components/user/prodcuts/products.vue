@@ -1,5 +1,5 @@
 <template>
-    <div id="products">
+    <div id="products" class='shouldCollapse'>
         <div class="filterText">
            <button class='submit' @click='toggleFiltering()'>فیلتر محصولات</button>
         </div>

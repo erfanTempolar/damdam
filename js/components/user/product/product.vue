@@ -1,5 +1,5 @@
 <template>
-    <div id="product" class='mainItemPerPage'>
+    <div id="product" class='mainItemPerPage shouldCollapse'>
         <div id="productWrapper">
             <prudctDetail></prudctDetail>
             <hr>

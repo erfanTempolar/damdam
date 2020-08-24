@@ -48,8 +48,13 @@ input::-webkit-input-placeholder {
 	justify-content: center;
 }
 .mainWrapper{
-	width: 93%;
+	width: 100%;
+	display:flex;
+	justify-content:center ;
 
+}
+.shouldCollapse{
+	width:93% !important
 }
 .mainItemPerPage{
 	margin-top: 20px;
