@@ -91,10 +91,7 @@
 	.next{
 		right:0
 	}
-	#slider{
-		position:relative;
-		width:688px;
-	}
+	
 	img{
 		width:100%
 	}
@@ -109,9 +106,13 @@
 		display:none;
 		animation: slide 2s ease;
 	}
-	.slide,#slider,img{
-		height:500px;
-		min-height:200px;
+	.slide,#slider{
+		max-height: max-content;
+	}
+	#slider{
+		position:relative;
+		width:688px;
+		max-height:max-content
 	}
 	.container{
 		position:absolute;
@@ -169,7 +170,7 @@
 
 	
 	.slide.active{
-		display:block
+		display:flex
 	}
 	.container p:nth-child(2){
 			font-size:12pt

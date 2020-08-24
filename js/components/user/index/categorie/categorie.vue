@@ -158,7 +158,6 @@
     }
 
     #sideSliderCats{
-        height:500px;
         display:flex;
         justify-content: flex-start;
         width:240px;
@@ -177,7 +176,7 @@
         display:flex;
         align-items:center
     }
-    @media (max-width:924px)
+    @media (max-width:801px)
 	{
 		#sideSliderCats{
 			display:none

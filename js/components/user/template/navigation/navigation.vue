@@ -64,7 +64,7 @@
 				this.checkNavigation=!this.checkNavigation
 			},
 			checkNavigationMethod(){
-				if(window.innerWidth>640)
+				if(window.innerWidth>801)
 				{
 					console.log("ham")
 					const ham=document.querySelector(".hamSvg")
@@ -160,13 +160,13 @@
 	#allCategories ul li{
 		position: relative;
 	}
-	@media (max-width: 924px)
+	@media (max-width: 801px)
 	{
 		#allCategories{
 			display:block
 		}
 	}
-	@media (max-width: 768px){
+	@media (max-width: 801px){
 		#navigation{
 			display: flex;
 			flex-direction: column;
