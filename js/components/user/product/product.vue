@@ -1,6 +1,6 @@
 <template>
     <div id="product" class='mainItemPerPage shouldCollapse'>
-        <div id="productWrapper">
+        <div id="productWrapper" class='maxis'>
             <prudctDetail></prudctDetail>
             <hr>
             <div class="chooseSection">
@@ -63,7 +63,10 @@
 
 <style>
     #product{
-        background:white
+        background:white;
+        display:flex;
+        flex-direction:column;
+        align-items:center
     }
     
     #productDetail{
@@ -74,7 +77,9 @@
     }
     #productWrapper{
         display:flex;
-        flex-direction:column
+        flex-direction:column;
+        width:100%;
+        max-width:1500px;
     }
     .chooseSection{
         display:flex;

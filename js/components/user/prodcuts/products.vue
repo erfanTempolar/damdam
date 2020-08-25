@@ -6,7 +6,7 @@
         <div @click='toggleConsulate(),adjustConsulateTop()' class="speek">
             <p>مشاوره رایگان</p>
         </div>
-        <div id="productsWrapper">
+        <div id="productsWrapper" class='maxis'>
             <div class="product">
                 <div class="productImg">
                     <img src="/images/ampl.jpg" alt="">

@@ -1,5 +1,5 @@
 <template>
-	<div id="index" class='mainItemPerPage'>
+	<div id="index" class='mainItemPerPage maxis'>
 		<div id="topOfIndex">
 			<div id="topOfIndexWrapper">
 				<categorie></categorie>

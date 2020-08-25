@@ -136,7 +136,7 @@
     .name p{
         color:#ff2654
     }
-    @media (min-width:320px) and (max-width: 362px)
+    @media (max-width: 362px)
     {
         .name p,.date p{
             font-size:13pt
@@ -150,7 +150,6 @@
         .commentSlicer{
             display: flex;
             margin-top:10px;
-            /* margin-bottom:10px; */
             justify-content: center;
         }
         #allComentsWrapper .singleComment:not(first-child)

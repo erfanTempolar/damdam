@@ -358,7 +358,7 @@ import starRating from 'vue-star-rating'
             order:2
         }
     }
-    @media (min-width:320px) and (max-width:800px)
+    @media (max-width:800px)
     {
         .productDetailsWrap{
             flex-direction:column

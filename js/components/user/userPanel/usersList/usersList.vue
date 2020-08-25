@@ -1,5 +1,5 @@
 <template>
-    <div id="usersList">
+    <div id="usersList" >
         <users-filter></users-filter>
         <user-list-table></user-list-table>
         
@@ -7,6 +7,12 @@
 </template>
 
 <style scoped>
+    #usersList{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        margin:auto
+    }
 
     
     

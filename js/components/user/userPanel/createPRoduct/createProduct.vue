@@ -1,6 +1,6 @@
 <template>
     <div id="createProduct" class='userPanelComp'>
-        <div id="createProductWrapper">
+        <div id="createProductWrapper" class='maxIs'>
             <form action="/testy" method="post">
                 <select-category></select-category>
                 <div id="name" class='productSection'>
@@ -24,14 +24,16 @@
                 <button type='submit' class='submit'>
                     ثبت محصول
                 </button>
-
-                
             </form>
         </div>
     </div>
 </template>
 
 <style scoped>
+    #createProduct{
+        display:flex;
+        justify-content: center;
+    }
     #nameWrapper label:before{
         content:' * ';
         color:red;
@@ -43,7 +45,7 @@
     }
     form{
         width:100%
-    }    
+    }
     #createProductWrapper{
         width:100%;
         display:flex;

@@ -12,7 +12,7 @@
                 <label for>حداکثر سفارش</label>
               </div>
               <div class="col1Input">
-                <input type="text" placeholder="حداکثر تعداد" />
+                <input type="number" placeholder="حداکثر تعداد" />
               </div>
             </div>
 
@@ -21,7 +21,7 @@
                 <label for>حداقل سفارش</label>
               </div>
               <div class="col2Input">
-                <input type="text" placeholder="حداقل تعداد" />
+                <input type="number" placeholder="حداقل تعداد" />
               </div>
             </div>
           </div>
@@ -42,7 +42,7 @@
                 <label for>وزن</label>
               </div>
               <div class="col2Input">
-                <input type="text" placeholder="وزن" />
+                <input type="number" placeholder="وزن" />
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
                 <label for>قیمت</label>
               </div>
               <div class="col2Input">
-                <input type="text" placeholder="قیمت" />
+                <input type="number" placeholder="قیمت" />
               </div>
             </div>
           </div>

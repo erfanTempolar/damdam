@@ -8,7 +8,7 @@
             <user-panel-navigation></user-panel-navigation>
 
                 <transition name="router" mode="out-in">
-                    <router-view/>
+                    <router-view class="maxIs" />
                 
                 </transition>
             

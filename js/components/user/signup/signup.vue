@@ -8,30 +8,29 @@
                 <form action="">
                     <div id="email" class="inputs">
                         <div class='formInputsWrapper'>
-                                <input @blur='focusOut($event),validateUserInput("email",$event)' id='userEmail' type="text">
-                                <label for="userEmail">ایمیل</label>
-                                
-                                  
+                                <input autocomplete="off" @blur='focusOut($event),startValidation("email",$event)' class='signupFormInputs' id='userEmail' type="text">
+                                <label for="userEmail">ایمیل</label>                                                                  
                         </div>
                         <p class="inputError">فرمت ایمیل اشتباه است</p> 
                     </div>
                     <div id="password" class="inputs">
                         <div class='formInputsWrapper'>
-                                <input @blur='focusOut($event),validateUserInput("pass",$event)' id='userPassword' type="text">
-                                <label for="userPassword">رمز</label>
-                                
+                                <input autocomplete="off" v-model="pass" @blur='focusOut($event),startValidation("pass",$event)' class='signupFormInputs' id='userPassword' type="password">
+                                <label for="userPassword">رمز</label>                                
                         </div>
                         <p class="inputError">رمز باید حداقل 8 کاراکتر باشد و همچنین حداقل شامل یک کاراکتر خاص مثل <span>#</span> باشد</p> 
                     </div>
                     <div id="passwordConf" class="inputs">
                         <div class='formInputsWrapper'>
                                  
-                                <input @blur='focusOut($event)' id='userPasswordCond' name='passConf'  type="text">
-                                <label for="userPasswordCond">تایید رمز</label>
+                                <input autocomplete="off" @blur='focusOut($event),checkConfirmation($event)' id='userPasswordCond' class='signupFormInputs' name='passConf'  type="password">
+                                <label for="userPasswordCond">رمز را دوباره وارد کنید</label>
+                                
                         </div>
+                        <p class="inputError">با رمز اصلی برابر نیست</p> 
                     </div>
                     <div id="submit" class='inputs'>
-                        <button class="submit">
+                        <button @click='checkInputs($event)' class="submit">
                             ثبت نام
                         </button>
                     </div>
@@ -137,7 +136,8 @@
         border:1px solid rgb(180,180,180);
         border-radius:5px;
         padding:1em 1em .8em 1em;
-        color:black
+        color:black;
+        direction:ltr
     }
     input:focus + label,
     label.stay
@@ -176,6 +176,11 @@
         created(){
             // console.log(this.validateUserInput())
         },
+        data(){
+            return{
+                pass:''
+            }
+        },
         methods:{
             focusOut(e){
                 const input=e.target
@@ -192,6 +197,45 @@
             },
             signinFormShouldShowMethod(){
                 return this.signinformhouldshow=="true" ? true : false
+            },
+            startValidation(type,e){
+                const el=e.target
+                const parentNode=e.target.parentElement
+            
+                const error=parentNode.nextElementSibling
+                if(el.id=="userPassword" && el.value.length<8)
+                {
+                     error.style.display="block"
+                     el.classList.remove("correct")
+                     el.classList.add("wrong")
+                     return
+                }
+                const res=this.validateUserInput(type,e)
+                
+                
+                if(res){
+                    error.style.display="none"
+                    return
+                }
+                error.style.display="block"
+            },
+            checkConfirmation(e){
+                // const parentNode=e.target.parentElement
+                // const error=parentNode.nextElementSibling
+                // if(e.target.value=='')
+                // {
+                //     e.target.classList.remove("correct")
+                //     e.target.classList.add("wrong")
+                //     return
+                // }
+
+                // if(e.target.value!=this.pass){
+                //     e.target.classList.remove("correct")
+                //     e.target.classList.add("wrong")
+                // }else{
+                //     e.target.classList.remove("wrong")
+                //     e.target.classList.add("correct")
+                // }
             }
         }
     }
