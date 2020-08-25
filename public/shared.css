@@ -88,4 +88,18 @@ button:hover{
 }
 select:focus{
         outline:none
-    }
+	}
+	
+.wrong{
+	border:1px solid rgb(247, 29, 29) !important
+}
+.correct{
+	border:1px solid rgb(68, 255, 44) !important
+}
+
+.inputError{
+	color:rgb(207, 73, 73) !important;
+	font-size:13pt;
+	margin-top:5px;
+	display:block
+}

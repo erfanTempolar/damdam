@@ -8,23 +8,25 @@
                 <form action="">
                     <div id="email" class="inputs">
                         <div class='formInputsWrapper'>
-                                
-                                <input @blur='focusOut' id='userEmail' type="text">
+                                <input @blur='focusOut($event),validateUserInput("email",$event)' id='userEmail' type="text">
                                 <label for="userEmail">ایمیل</label>
-
+                                
+                                  
                         </div>
+                        <p class="inputError">فرمت ایمیل اشتباه است</p> 
                     </div>
                     <div id="password" class="inputs">
                         <div class='formInputsWrapper'>
-                                
-                                <input @blur='focusOut' id='userPassword' type="text">
+                                <input @blur='focusOut($event),validateUserInput("pass",$event)' id='userPassword' type="text">
                                 <label for="userPassword">رمز</label>
+                                
                         </div>
+                        <p class="inputError">رمز باید حداقل 8 کاراکتر باشد و همچنین حداقل شامل یک کاراکتر خاص مثل <span>#</span> باشد</p> 
                     </div>
                     <div id="passwordConf" class="inputs">
                         <div class='formInputsWrapper'>
                                  
-                                <input @blur='focusOut' id='userPasswordCond' name='passConf'  type="text">
+                                <input @blur='focusOut($event)' id='userPasswordCond' name='passConf'  type="text">
                                 <label for="userPasswordCond">تایید رمز</label>
                         </div>
                     </div>
@@ -49,8 +51,8 @@
                 <form action="">
                     <div id="email" class="inputs">
                         <div class='formInputsWrapper'>
-                                
-                                <input @blur='focusOut' id='userEmail' type="text">
+                                                       
+                                <input @blur='focusOut($event)' id='userEmail' type="text">
                                 <label for="userEmail">ایمیل یا نام کاربری</label>
 
                         </div>
@@ -58,7 +60,7 @@
                     <div id="password" class="inputs">
                         <div class='formInputsWrapper'>
                                 
-                                <input @blur='focusOut' id='userPassword' type="text">
+                                <input @blur='focusOut($event)' id='userPassword' type="text">
                                 <label for="userPassword">رمز</label>
                         </div>
                     </div>
@@ -102,7 +104,8 @@
     }
     .inputs{
         display: flex;
-        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
         width:100%;
         margin-top:20px;
     }
@@ -145,12 +148,21 @@
         color:#139dd7;
         font-size:12pt
     }
+    .inputError{
+        max-width:150px;
+        text-align:justify ;
+    }
+    .inputError span{
+        color:black !important
+    }
 
 </style>
 
 
 <script>
+    import {validationRules} from "../mixIns/validationMixIn.js"
     export default{
+        mixins:[validationRules],
         mounted(){
             const inputs=document.querySelectorAll(".formInputsWrapper input")
             inputs.forEach(inp=>{
@@ -161,8 +173,9 @@
             console.log(inputs)
         },
         props:["signupformshouldshow",'signinformhouldshow'],
-
-
+        created(){
+            // console.log(this.validateUserInput())
+        },
         methods:{
             focusOut(e){
                 const input=e.target
