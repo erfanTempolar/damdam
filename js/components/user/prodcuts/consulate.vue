@@ -3,11 +3,13 @@
         <div @click='prevent($event)' id="consulateWrapper">
             <div class="input">
                 <label for="name">نام:</label>
-                <input autocomplete="off" type="text" id='name' name="" placeholder="نام">
+                <input v-model='name' @blur="startValidateForName($event)" autocomplete="off" type="text" id='name' name="" placeholder="نام">
+                <p class='inputError'>نام نمیتواند خالی باشد</p>
             </div>
             <div class="input">
-                <label for="phone">شماره تلفن:</label>
-                <input autocomplete="off" type="text" id='phone' name="" placeholder="شماره تلفن">
+                <label for="phone" >شماره تلفن همراه:</label>
+                <input autocomplete="off" @blur='startValidation("phone",$event)' type="text" id='phone' name="" placeholder="شماره تلفن همراه">
+                <p class='inputError'>فرمت شماره تلفن اشتباه است</p>
             </div>
             <div>
                 <button @click='consulateRequest()' class="submit">ثبت</button>
@@ -20,8 +22,9 @@
 
 <script>
     import {mapActions} from 'vuex'
-    
+    import {validationRules} from '../mixIns/validationMixIn.js'
     export default {
+        mixins:[validationRules],
         methods:{
             ...mapActions([
                 'toggleConsulate'
@@ -41,11 +44,34 @@
                 setTimeout(()=>{
                     doneMessage.style.display='none'
                 },5000)
+            },
+            startValidation(ruleType,e){
+                const res=this.validateUserInput(ruleType,e)
+                if(!res){
+                    e.target.nextElementSibling.style.display='block'
+                    return
+                }
+                e.target.nextElementSibling.style.display='none'
+                
+            },
+            startValidateForName(e){
+                const error=e.target.nextElementSibling
+                if(this.name.length==''){
+                    error.style.display='block'
+                    return
+                }
+                error.style.display='none'
+            }
+        },
+        data(){
+            return{
+                name:""
             }
         },
         computed:{
             shoudIShow(){
                 return this.$store.state.isShowConsulate
+                
             }            
         }        
     }

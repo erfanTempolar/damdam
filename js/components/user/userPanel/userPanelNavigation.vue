@@ -1,10 +1,10 @@
 <template>
-    <div v-if='shoudIShow' id='userPanelNavigation' @click='toggleUserPanelNavigation()'>
+    <div  id='userPanelNavigation' @click='toggleUserPanelNavigation(),toggleBodyOverFlow()'>
         <div id="userPanelNavigationWrapper" @click='prevent($event)'>
             <ul>
-                <li @click="toggleUserPanelNavigation()"> <router-link to="/userPanel">پروفایل</router-link> <img class='icon' src="/images/profile.png" alt=""></li>
-                <li @click="toggleUserPanelNavigation()"><router-link to="/userPanel/createProduct">اضافه کردن محصول برای فروش</router-link><img src="/images/sell.png" class='icon' alt=""></li>
-                <li @click="toggleUserPanelNavigation()"><router-link to="/userPanel/usersList">لیست کاربران</router-link><img src="/images/sell.png" class='icon' alt=""></li>
+                <li @click="toggleUserPanelNavigation(),toggleBodyOverFlow()"> <router-link to="/userPanel">پروفایل</router-link> <img class='icon' src="/images/profile.png" alt=""></li>
+                <li @click="toggleUserPanelNavigation(),toggleBodyOverFlow()"><router-link to="/userPanel/createProduct">اضافه کردن محصول برای فروش</router-link><img src="/images/sell.png" class='icon' alt=""></li>
+                <li @click="toggleUserPanelNavigation(),toggleBodyOverFlow()"><router-link to="/userPanel/usersList">لیست کاربران</router-link><img src="/images/sell.png" class='icon' alt=""></li>
 
             </ul>
         </div>
@@ -13,9 +13,12 @@
 
 
 <script>
-import {mapActions} from 'vuex'
+    import {mapActions} from 'vuex'
+    import {toggleBodyOverFlow} from "../mixIns/toggleBodyOverFlow"
+	import {adjustElFromTop} from '../mixIns/adjustElFromTop.js'
     export default{
         name:"userPanelNavigation",
+        mixins:[toggleBodyOverFlow,adjustElFromTop],
         methods:{
             ...mapActions([
 
@@ -27,11 +30,15 @@ import {mapActions} from 'vuex'
                 e.preventDefault();   
             }
         },
-        computed:{
-            shoudIShow(){
-                return this.$store.state.isShowUserPanelNavigation
+        mounted(){
+            console.log(document.querySelector("#userPanelNavigationWrapper"))
+                this.adjustFromTop(document.querySelector("#userPanelNavigationWrapper"))
+			    this.toggleBodyOverFlow('hidden') 
             },
-           
+        computed:{
+                      
+            
+            
         }
     }
 </script>
@@ -51,7 +58,6 @@ import {mapActions} from 'vuex'
         width:100%;
         height:100%;
         background: rgba(0,0,0,0.4);
-
     }
     #userPanelNavigationWrapper{
         background:rgb(74, 97, 143);
@@ -59,7 +65,8 @@ import {mapActions} from 'vuex'
         right:0;
         top:0;
         bottom:0;
-        max-width:80%
+        max-width:80%;
+        height:100vh
     }
     ul{
         display:flex;

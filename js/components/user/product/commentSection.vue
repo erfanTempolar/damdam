@@ -9,7 +9,7 @@
             <div id="createNewComment">
                 <div id="createNewCommentWrapper">
                         <form action="">
-                            <textarea placeholder="نظر خد را بنویسید"></textarea>
+                            <textarea placeholder="نظر خود را بنویسید"></textarea>
                             <button type='submit' class='submit'>ثبت نظر</button>
                         </form>
                 </div>

@@ -1,11 +1,12 @@
 <template>
     <div id="userPanel" class='mainItemForUserPanel shouldCollapse'>
         <div id="userPanelWrapper">
-            <div id="userPanelNavigationWrapper">
-                <button class='submit' @click='toggleUserPanelNavigation'>منوی کاربری</button>
+            <div id="userPanelNavigationOpenBtn">
+                <button class='submit' @click='toggleUserPanelNavigation()'>منوی کاربری</button>
             </div>
             
-            <user-panel-navigation></user-panel-navigation>
+            
+            <user-panel-navigation v-if='shoudIShow'></user-panel-navigation>
 
                 <transition name="router" mode="out-in">
                     <router-view class="maxIs" />
@@ -20,10 +21,11 @@
 <script>
     import {mapActions} from 'vuex'
     import userPanelNavigation from "./userPanelNavigation.vue"
-    // import createProduct from "./createPRoduct/createProduct.vue"
-    // import profile from "./profile/profile.vue"
+    import {toggleBodyOverFlow} from "../mixIns/toggleBodyOverFlow.js"
+	import {adjustElFromTop} from '../mixIns/adjustElFromTop.js'
     export default{
         name:"userPanel",
+        mixins:[toggleBodyOverFlow,adjustElFromTop],
         components:{
             userPanelNavigation,
             // createProduct,
@@ -32,10 +34,12 @@
         methods:{
             ...mapActions([
                 'toggleUserPanelNavigation'
-            ]),
-            // getcCrrenComponent(){
-            //     return this.$store.state.currentComponentUserPanelNavigation
-            // }
+            ])
+        },
+        computed:{
+            shoudIShow(){
+                return this.$store.state.isShowUserPanelNavigation
+            }, 
         }
     }
 </script>
@@ -52,7 +56,7 @@
         align-content: center;
         flex-direction:column;
     }
-    #userPanelNavigationWrapper{
+    #userPanelNavigationOpenBtn{
         display:flex;
         flex-direction:column;
         align-items: center;

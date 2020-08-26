@@ -1,5 +1,5 @@
 <template>
-	<div id="flatMenu" @click="toggleSubMenu">
+	<div id="flatMenu" @click="toggleSubMenu(),toggleOverFlow()">
 		<div id="flatMenuWrapper" @click='prevent'>
 			<ul>
 			    <li>	
@@ -159,11 +159,11 @@
 		display:flex;
 		flex-wrap: nowrap;
 		width:max-content;
-			right:0;
-			top:0;
-			bottom:0;
-			overflow: scroll;
-			height:100%
+		right:0;
+		top:0;
+		bottom:0;
+		overflow: scroll;
+		
 		
 	}
 	ul{
@@ -176,21 +176,21 @@
 		flex-wrap: wrap;
 		position: relative;
 		display:flex;
-			flex-direction:column;
-			align-items: flex-end;
-			justify-content: flex-start;
-			max-height: max-content;
-			flex-wrap: nowrap;
-			height:100%
+		flex-direction:column;
+		align-items: flex-end;
+		justify-content: flex-start;
+		max-height: max-content;
+		flex-wrap: nowrap;
+		height:100%
 	}
 	li{
 		cursor: pointer;
 		position: relative;
-		width: max-content;
 		margin-top:5px;
 		padding:5px;
 		transition: all 0.5s linear;
-		text-align:right		
+		text-align:right;
+		width:100%
 	}
 	li a{
 		position: relative;
@@ -211,7 +211,6 @@
 		left:0;
 		width:100%;
 		height:2px;
-		/* background-color: inherit; */
 		transform: scaleX(0);
 		transition:all 0.5s ;
 		transform-origin: left;
@@ -223,7 +222,6 @@
 		left:0;
 		width:100%;
 		height:2px;
-		/* background-color: inherit; */
 		transform: scaleX(0);
 		transition:all 0.5s ;
 		transform-origin: right;
@@ -241,10 +239,9 @@
 			top:0;
 			bottom:0;
 			overflow: scroll;
-			height:100%
+			height:100vh
 		}
 		#flatMenuWrapper ul{
-			max-width:min-content;
 			height:100%;
 
 		}
@@ -258,13 +255,15 @@
 			flex-direction:column;
 			align-items: flex-end;
 			justify-content: flex-start;
-			max-height: max-content;
+			max-height: 100%;
 			flex-wrap: nowrap;
 			height:100%
 		}
 		li{
 			height: max-content;
 			line-height: 3em;
+			width:100%;
+			text-align:right
 		}
 		li:nth-child(odd)
 		{
@@ -280,7 +279,10 @@
 
 <script>
 	import {mapActions} from "vuex"
+	import {toggleBodyOverFlow} from "../../mixIns/toggleBodyOverFlow.js"
+	import {adjustElFromTop} from '../../mixIns/adjustElFromTop.js'
 	export default{
+		mixins:[toggleBodyOverFlow,adjustElFromTop],
 		methods:{
 			...mapActions([
 				'toggleSubMenu'
@@ -291,14 +293,15 @@
 				e.preventDefault();
 				
 				
+			},
+			toggleOverFlow(){
+				this.toggleBodyOverFlow()
 			}
 
 		},
 		mounted(){
-			// if(window.innerWidth>640){
-			// 	const el=document.querySelector("#flatMenuWrapper")
-			// 	el.style.top=this.$store.state.categoriesTop
-			// }
+			this.adjustFromTop(document.querySelector("#flatMenuWrapper"))
+			this.toggleBodyOverFlow('hidden')
 
 		}
 		

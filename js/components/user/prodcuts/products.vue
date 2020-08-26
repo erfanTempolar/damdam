@@ -1,7 +1,7 @@
 <template>
     <div id="products" class='shouldCollapse'>
         <div class="filterText">
-           <button class='submit' @click='toggleFiltering()'>فیلتر محصولات</button>
+           <button class='submit' @click='toggleFiltering()'><img src="/images/filter.png" alt="" class="filterIcon"> فیلتر محصولات </button>
         </div>
         <div @click='toggleConsulate(),adjustConsulateTop()' class="speek">
             <p>مشاوره رایگان</p>
@@ -9,7 +9,7 @@
         <div id="productsWrapper" class='maxis'>
             <div class="product">
                 <div class="productImg">
-                    <img src="/images/ampl.jpg" alt="">
+                    <img src="/images/htest2.jpg" alt="">
                 </div>
                 <div class="descs">
                     <div class="productTitle">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="productRegion">
                     <div class="compony">
-                        <p>ساخت گلد ایران ایران ایران ایرن</p>
+                        <p>ساخت گلد  ایرن</p>
                     </div>
                     <div class="region">
                         <p>چین</p>
@@ -71,7 +71,7 @@
 
         </div>
         <transition name="fade" mode='out-in'>
-            <consulate :key='hello'></consulate>
+            <consulate></consulate>
         </transition>
     </div>
 </template>
@@ -81,7 +81,7 @@
         background: rgb(229,46,113);
         position:fixed;
         right:0;
-        top:200px;
+        top:80%;
         z-index:665;
         cursor:pointer
     }
@@ -120,6 +120,7 @@
         flex-direction:column;
         align-items: flex-end;
         width:60%;
+        order:2
     }
     .productTitle a{
         color:rgb(74, 96, 192)
@@ -134,6 +135,7 @@
         display:flex;
         justify-content: center;
         align-items: center;
+        width:20%
     }
     .productDescs p{
         font-size:14pt
@@ -142,8 +144,7 @@
         font-size:12pt
     }
     .productImg img{
-        width:200px;
-        height:200px
+        width:100%;
     }
     .seeProduct{
         margin-top:20px
@@ -151,21 +152,20 @@
     .productRegion{
         display:flex;
         flex-direction:column;
-        justify-content:flex-start;
+        justify-content:center;
         align-items: center;
+        order:1;
+        width:20%;
         border:5px solid rgb(211, 219, 221)
     }
     .productRegion div{
         padding:5px
     }
-    .descs{
-        order:2
-    }
-    .productRegion{
-        order:1
-    }
     .region{
         display:flex
+    }
+    .region p{
+        margin-right:5px
     }
     .productImg img:hover{
         transform: scale(1.4);
@@ -180,15 +180,19 @@
             width:100%
         }
         .productRegion{
-            order:3
+            order:3;
+            height: 150px;
+            width:300px;
+            max-width: max-content;
+            margin:auto;
+            margin-top:20px
         }
         .productImg{
-            order:1
+            order:1;
+            width:100%;
         }
-        .productRegion{
-            height: 150px;
-            max-width: max-content;
-            margin:auto
+        .productImg img{
+            width:250px;
         }
         .productTitle p{
             font-size: 15pt;
@@ -197,9 +201,14 @@
         .productDescs p{
             line-height: 120%;
         }
-        .productRegion{
-            margin-top:20px
-        }
+    }
+    .submit img.filterIcon{
+        width:20px;
+        height:20px
+    }
+    .submit{
+        display: flex;
+        align-items: center;
     }
     .fade-enter-active{
         animation: fadeIn 0.3s linear;

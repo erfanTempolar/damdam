@@ -32,11 +32,26 @@
     import commentSection from './commentSection.vue'
     import productDescs from './productDescs.vue'
     import componyDetali from "./componyDetail.vue"
+    import axios from 'axios'
     export default{
         data(){
             return{
                 currentComponent:'commentSection'
             }
+        },
+        mounted(){
+            axios({
+                method: 'get',
+                headers: { 'Content-Type': 'application/json','Accept':"*/*" },
+                crossDomain: true,
+                url: 'http://rlbapi.pythonanywhere.com/products-api/'
+              }).then(function (response) {
+                console.log(response.data);
+            });
+            // axios.get('http:/\/\rlbapi.pythonanywhere.com/products-api')
+            //     .then(res=>{
+            //         console.log(res.data)
+            //     })
         },
         name:"product",
         components:{
@@ -57,10 +72,6 @@
 
     }
 </script>
-
-
-
-
 <style>
     #product{
         background:white;

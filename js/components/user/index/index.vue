@@ -7,6 +7,7 @@
 			</div>			
 		</div>
 		<flip-card></flip-card>
+		<extra-sign-up></extra-sign-up>
 		<div id="allCards" class='shouldCollapse'>
 			<card cardTitle="بیشترین کلیک شده" descs='فلان لان فلان خیلی فلا هی فلان بازم فلان' :products='getProducts()'></card>
 			
@@ -117,13 +118,15 @@
 	import card from './card/card.vue'
 	import flipCard from './flipCard/flipCard.vue'
 	import categorie from './categorie/categorie.vue'
+	import extraSignUp from "./extraSignUp/extraSignUp.vue"
 	export default{
 		components:{
 			slider,
 			card,
 			categorie,
 			flipCard,
-			digiCard
+			digiCard,
+			extraSignUp
 		},
 		data(){
 			return{

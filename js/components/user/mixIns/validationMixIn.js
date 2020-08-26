@@ -14,6 +14,10 @@ export const validationRules = {
             {
                 return this.validateInput(this.rules.url, e.target)
             }
+            else if(inputType=="phone")
+            {
+                return this.validateInput(this.rules.phone, e.target)
+            }
         },
         validateInput(rule, el) {
             // console.log(rule)
@@ -25,8 +29,6 @@ export const validationRules = {
             else{
                 test = rule.test(el.value.trim())
             }
-            
-            console.log(test,el,el.value.trim())
             if (test) {
                 el.classList.remove("wrong")
                 el.classList.add("correct")
@@ -43,7 +45,8 @@ export const validationRules = {
                 name: /^[\w]{3,}$/g,
                 email: /^([\w\.]{2,})@([\w]+)\.([a-z]+)$/,
                 pass: /[;:!@#$%\^&*()_\+=-\?/>\.<,\/\\]{1,}/,
-                url: /^(https?):\/\/www\.([\w\.]+)\.([\w\.]+)$/i
+                url: /^(https?):\/\/www\.([\w\.]+)\.([\w\.]+)$/i,
+                phone:/^[\d]{11}$/
             }
         }
     }
