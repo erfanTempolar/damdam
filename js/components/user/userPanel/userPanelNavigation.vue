@@ -31,14 +31,8 @@
             }
         },
         mounted(){
-            console.log(document.querySelector("#userPanelNavigationWrapper"))
-                this.adjustFromTop(document.querySelector("#userPanelNavigationWrapper"))
-			    this.toggleBodyOverFlow('hidden') 
-            },
-        computed:{
-                      
-            
-            
+            this.adjustFromTop(document.querySelector("#userPanelNavigationWrapper"))
+		    this.toggleBodyOverFlow('hidden') 
         }
     }
 </script>

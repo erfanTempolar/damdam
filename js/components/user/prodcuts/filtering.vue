@@ -1,5 +1,5 @@
 <template>
-    <div id="filtering" @click='checkelements($event)' v-if='shoudShow()'>
+    <div id="filtering" @click='checkelements($event)' >
         <div id="filteringWrapper">
 
 
@@ -11,7 +11,7 @@
                 <div class="allRegions">
                     <div class="singleRegion">
                         <div class='regionCountry'>
-                            <input type="checkbox" name="regions[]">
+                            <input type="checkbox" class='checkbox' name="regions[]">
                         </div>
                         <div class="label">
                             <label for="">چین</label>
@@ -20,7 +20,7 @@
                     </div>
                     <div class="singleRegion">
                         <div class='regionCountry'>
-                            <input type="checkbox" name="regions[]">
+                            <input type="checkbox" class='checkbox' name="regions[]">
                         </div>
                         <div class="label">
                             <label for="">کره</label>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="singleRegion">
                         <div class='regionCountry'>
-                            <input type="checkbox" name="regions[]">
+                            <input type="checkbox" class='checkbox' name="regions[]">
                         </div>
                         <div class="label">
                             <label for="">ایران</label>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="singleRegion">
                         <div class='regionCountry'>
-                            <input type="checkbox" name="regions[]">
+                            <input type="checkbox" class='checkbox' name="regions[]">
                         </div>
                         <div class="label">
                             <label for="">آلمان</label>
@@ -82,6 +82,10 @@
 
 
 <style scoped>
+    .checkbox{
+        width:20px;
+        height: 20px;
+    }
 
     #filtering{
         display:flex;
@@ -99,7 +103,7 @@
         position:absolute;
         right:0;
         background:  rgb(20,40,80);
-        height:100%;
+        height:100vh;
         top:0;
         color:white
     }
@@ -147,19 +151,21 @@
 
 <script>
 import {mapActions} from "vuex"
+import {toggleBodyOverFlow} from "../mixIns/toggleBodyOverFlow.js"
+import {adjustElFromTop} from '../mixIns/adjustElFromTop.js'
 export default {
+    mixins:[toggleBodyOverFlow,adjustElFromTop],
     methods:{
         ...mapActions([
             'toggleFiltering'
         ]),
-        shoudShow(){
-            return this.$store.state.isShowFiltering
-        },
+        
         checkelements(e){
             console.log(e.target.id)
             if(e.target.id=='filtering')
             {
                 this.toggleFiltering()
+                this.toggleBodyOverFlow() 
             }
         },
         checkInput(e){
@@ -170,6 +176,12 @@ export default {
             }
             e.target.classList.remove("forceLtr")
         }
-    }
+        
+    },
+    mounted(){
+        console.log("mount")
+            this.adjustFromTop(document.querySelector("#filteringWrapper"))
+		    this.toggleBodyOverFlow('hidden') 
+        }
 }
 </script>

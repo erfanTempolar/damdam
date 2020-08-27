@@ -73,6 +73,10 @@
         <transition name="fade" mode='out-in'>
             <consulate></consulate>
         </transition>
+        <keep-alive>
+            <filtering v-if='shoudShow()'></filtering>
+        </keep-alive>
+
     </div>
 </template>
 
@@ -238,9 +242,11 @@
 <script>
     import {mapActions} from 'vuex'
     import consulate from "./consulate.vue"
+    import filtering from "./filtering.vue"
     export default{
         components:{
-            consulate
+            consulate,
+            filtering
         },
         data(){
             return{
@@ -261,6 +267,9 @@
                 document.body.style.overflow='hidden'
                 const done=document.querySelector("#doneMessage")
                 done.style.display='none'
+            },
+            shoudShow(){
+                return this.$store.state.isShowFiltering
             }
         }
     }

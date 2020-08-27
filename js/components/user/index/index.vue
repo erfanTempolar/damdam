@@ -130,7 +130,7 @@
 		},
 		data(){
 			return{
-				products:[{desc:'محصل فلاkmfkdmfkdmsfkmfkmfkdm kmk kfmdk mkfmksdm kmf kdsن و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"}]
+				products:[{desc:'محصل فلانئ ئنیسئب ئنئ ثنصئب نئنئ ئن ئنئنئنئنئنئنئنئنئنئنئن و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"},{desc:'محصل فلان و فلان وفلان',url:"/images/a.jpg"}]
 			}
 		},
 		methods:{

@@ -107,3 +107,21 @@ select:focus{
 	width:100% !important;
 	max-width:1500px !important;
 }
+
+
+.formInputsWrapper{
+	width:max-content;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	position: relative;
+}
+input:focus + label.comeUpLabel,
+    label.stay
+    {
+        animation:changeLabel 0.5s linear;
+        position:absolute;
+        top:2px;
+        color:#139dd7 !important;
+        font-size:12pt
+    }

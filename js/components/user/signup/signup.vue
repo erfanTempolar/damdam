@@ -9,14 +9,23 @@
                     <div id="email" class="inputs">
                         <div class='formInputsWrapper'>
                                 <input autocomplete="off" @blur='focusOut($event),startValidation("email",$event)' class='signupFormInputs' id='userEmail' type="text">
-                                <label for="userEmail">ایمیل</label>                                                                  
+                                <label class='comeUpLabel' for="userEmail">ایمیل</label>                                                                  
                         </div>
                         <p class="inputError">فرمت ایمیل اشتباه است</p> 
                     </div>
+
+                    <div id="phoneNumber" class="inputs">
+                        <div class='formInputsWrapper'>
+                                <input autocomplete="off" @blur='focusOut($event),startValidation("phone",$event)' class='signupFormInputs' id='userPhone' type="text">
+                                <label class='comeUpLabel' for="userPhone">شماره تلفن همراه</label>                                                                  
+                        </div>
+                        <p class="inputError">فرمت شماره اشتباه است</p> 
+                    </div>
+
                     <div id="password" class="inputs">
                         <div class='formInputsWrapper'>
                                 <input autocomplete="off" v-model="pass" @blur='focusOut($event),startValidation("pass",$event)' class='signupFormInputs' id='userPassword' type="password">
-                                <label for="userPassword">رمز</label>                                
+                                <label class='comeUpLabel' for="userPassword">رمز</label>                                
                         </div>
                         <p class="inputError">رمز باید حداقل 8 کاراکتر باشد و همچنین حداقل شامل یک کاراکتر خاص مثل <span>#</span> باشد</p> 
                     </div>
@@ -24,7 +33,7 @@
                         <div class='formInputsWrapper'>
                                  
                                 <input autocomplete="off" @blur='focusOut($event),checkConfirmation($event)' id='userPasswordCond' class='signupFormInputs' name='passConf'  type="password">
-                                <label for="userPasswordCond">رمز را دوباره وارد کنید</label>
+                                <label class='comeUpLabel' for="userPasswordCond">رمز را دوباره وارد کنید</label>
                                 
                         </div>
                         <p class="inputError">با رمز اصلی برابر نیست</p> 
@@ -52,7 +61,7 @@
                         <div class='formInputsWrapper'>
                                                        
                                 <input @blur='focusOut($event)' id='userEmail' type="text">
-                                <label for="userEmail">ایمیل یا نام کاربری</label>
+                                <label class='comeUpLabel' for="userEmail">ایمیل یا نام کاربری</label>
 
                         </div>
                     </div>
@@ -60,7 +69,7 @@
                         <div class='formInputsWrapper'>
                                 
                                 <input @blur='focusOut($event)' id='userPassword' type="text">
-                                <label for="userPassword">رمز</label>
+                                <label class='comeUpLabel' for="userPassword">رمز</label>
                         </div>
                     </div>
                     <div id="submit" class='inputs'>
@@ -108,13 +117,7 @@
         width:100%;
         margin-top:20px;
     }
-    .formInputsWrapper{
-        width:max-content;
-        display: flex;
-        justify-content: center;
-        align-items:center;
-        position: relative;
-    }
+    
     form div div{
         display:flex;
         justify-content: space-around;
@@ -133,21 +136,13 @@
         font-size:24pt
     }
     input{
-        border:1px solid rgb(180,180,180);
+        border:1px solid rgb(202, 202, 202);
         border-radius:5px;
         padding:1em 1em .8em 1em;
         color:black;
         direction:ltr
     }
-    input:focus + label,
-    label.stay
-    {
-        animation:changeLabel 0.5s linear;
-        position:absolute;
-        top:2px;
-        color:#139dd7;
-        font-size:12pt
-    }
+    
     .inputError{
         max-width:150px;
         text-align:justify ;
@@ -161,8 +156,9 @@
 
 <script>
     import {validationRules} from "../mixIns/validationMixIn.js"
+    import {keepStay} from "../mixIns/keepStay.js"
     export default{
-        mixins:[validationRules],
+        mixins:[validationRules,keepStay],
         mounted(){
             const inputs=document.querySelectorAll(".formInputsWrapper input")
             inputs.forEach(inp=>{
@@ -182,16 +178,7 @@
             }
         },
         methods:{
-            focusOut(e){
-                const input=e.target
-                const label=input.nextElementSibling
-                if(input.value!='')
-                {
-                    label.classList.add("stay")
-                    return
-                }
-                label.classList.remove("stay")
-            },
+            
             signupFormShouldShowMethod(){
                 return this.signupformshouldshow=="true" ? true : false
             },
@@ -218,24 +205,6 @@
                     return
                 }
                 error.style.display="block"
-            },
-            checkConfirmation(e){
-                // const parentNode=e.target.parentElement
-                // const error=parentNode.nextElementSibling
-                // if(e.target.value=='')
-                // {
-                //     e.target.classList.remove("correct")
-                //     e.target.classList.add("wrong")
-                //     return
-                // }
-
-                // if(e.target.value!=this.pass){
-                //     e.target.classList.remove("correct")
-                //     e.target.classList.add("wrong")
-                // }else{
-                //     e.target.classList.remove("wrong")
-                //     e.target.classList.add("correct")
-                // }
             }
         }
     }

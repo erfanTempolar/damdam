@@ -6,10 +6,16 @@
 			
 				<div class="cardItem" v-for='(p,index) in JSON.parse(products)' :key='index'>
 					<div class="productImage">
-						<img :src="getUrl(p)" alt="">
+						<a href="#"><img :src="getUrl(p)" alt=""></a>
+					</div>
+					<div class="productTitle">
+						<p>خط تولید مشاین لباسش شویی تمم اتومات</p>
 					</div>
 					<div class="productDesc">
 						<p>{{getDesc(p.desc)}}</p>
+					</div>
+					<div class="productContinue">
+						<a href="#"><button class=continue>ادامه مطلب</button></a>
 					</div>
 				</div>
 				
@@ -37,7 +43,7 @@
             },
             getDesc(desc){
                 console.log(desc.substring(0,30).length)
-                return desc.length>30 ? desc.substring(0,30)+"..." : desc
+                return desc.length>30 ? desc.substring(0,100)+"..." : desc
 			},
 			mouseDown(e){
 				this.isDown=true
@@ -159,19 +165,28 @@
     }
     
 	.cardItem p{
-		word-break: break-all;
+		word-break: keep-all;
 	}
 	.productDesc{
-		width: 200px
+		width: 250px;
+		min-height: 100px;
+		margin-top:5px;
+		
+	}
+	.productTitle{
+		width: 250px;
+		margin-top:5px;
 	}
 	.productImage{
-		width: 200px;
-		height: 200px;
+		width: 250px;
+		height: 230px;
 	}
 	
 	img{
-		width: 200px;
-		height: 200px;
+		width: 250px;
+		height: 230px;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
 	}
 	.active{
 		cursor: grabbing;

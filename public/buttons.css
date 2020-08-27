@@ -58,3 +58,14 @@
 .done:hover{
 	background:#da113c
 }
+
+.continue{
+	padding:10px 10px 10px 10px;
+	border-radius: 16px;
+	background: #dd2049;
+	border:0;
+	font-size:15pt;
+	color:white;
+	font-family: 'yekan';
+	cursor: pointer;
+}
