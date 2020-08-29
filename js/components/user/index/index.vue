@@ -1,5 +1,5 @@
 <template>
-	<div id="index" class='mainItemPerPage maxis'>
+	<div id="index" class='mainItemPerPage'>
 		<div id="topOfIndex">
 			<div id="topOfIndexWrapper">
 				<categorie></categorie>
@@ -8,12 +8,12 @@
 		</div>
 		<flip-card></flip-card>
 		<extra-sign-up></extra-sign-up>
-		<div id="allCards" class='shouldCollapse'>
+		<div id="allCards" class='shouldCollapse maxIs'>
 			<card cardTitle="بیشترین کلیک شده" descs='فلان لان فلان خیلی فلا هی فلان بازم فلان' :products='getProducts()'></card>
 			
 		</div>
-		<div class="digiCardIndex">
-			<digi-card :imgs='JSON.stringify(["/images/digi1.jpg","/images/digi2.jpg","/images/digi1.jpg","/images/digi2.jpg"])'></digi-card>
+		<div class="digiCardIndex shouldCollapse maxIs">
+			<digi-card :imgs='JSON.stringify(["/images/shrink.png","/images/digi2.jpg","/images/digi1.jpg","/images/digi2.jpg"])'></digi-card>
 		</div>
 	</div>
 </template>

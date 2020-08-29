@@ -9,7 +9,7 @@
 						<a href="#"><img :src="getUrl(p)" alt=""></a>
 					</div>
 					<div class="productTitle">
-						<p>خط تولید مشاین لباسش شویی تمم اتومات</p>
+						<a href="#"><p>خط تولید مشاین لباسش شویی تمم اتومات</p></a>
 					</div>
 					<div class="productDesc">
 						<p>{{getDesc(p.desc)}}</p>
@@ -176,6 +176,9 @@
 	.productTitle{
 		width: 250px;
 		margin-top:5px;
+	}
+	.productTitle p{
+		color:rgb(34, 105, 122)
 	}
 	.productImage{
 		width: 250px;

@@ -69,7 +69,7 @@
                 const error=parentNode.nextElementSibling
                 if(el.id=="userPassword" && el.value.length<8)
                 {
-                    error.style.display="block"
+                    error.style.visibility="visible"
                     el.classList.remove("correct")
                     el.classList.add("wrong")
                     return
@@ -78,10 +78,10 @@
                 
                 
                 if(res){
-                    error.style.display="none"
+                    error.style.visibility="hidden"
                     return
                 }
-                error.style.display="block"
+                error.style.visibility="visible"
 
             }
         }
@@ -111,7 +111,7 @@
     height:100%
 }
 img,#extraSignUp{
-  height:580px
+  height:630px
 }
 img{
     width:100%;
@@ -174,10 +174,25 @@ input + label{
 @media (max-width:699px)
 {
   .extraSignUpWrapper{
-    flex-direction:column
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
   }
-  img,#extraSignUp{
-    height:650px
+  #extraSignUp{
+    height:max-content
+  }
+  img{
+    height:100%
+  }
+  .descs{
+    width:100%;
+  }
+  .signUp{
+    width:max-content;
+    margin-top:50px;
+    
+    max-width:max-content;
   }
 }
 </style>

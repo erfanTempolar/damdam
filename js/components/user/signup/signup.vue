@@ -166,7 +166,6 @@
                 
             })
             })
-            console.log(inputs)
         },
         props:["signupformshouldshow",'signinformhouldshow'],
         created(){
@@ -192,7 +191,7 @@
                 const error=parentNode.nextElementSibling
                 if(el.id=="userPassword" && el.value.length<8)
                 {
-                     error.style.display="block"
+                     error.style.visibility="visible"
                      el.classList.remove("correct")
                      el.classList.add("wrong")
                      return
@@ -201,10 +200,10 @@
                 
                 
                 if(res){
-                    error.style.display="none"
+                    error.style.visibility="hidden"
                     return
                 }
-                error.style.display="block"
+                error.style.visibility="visible"
             }
         }
     }

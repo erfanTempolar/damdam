@@ -1,6 +1,6 @@
 <template>
-	<div id="header">
-		<div id="headerWrapper" class='maxIs'>
+	<div id="header" >
+		<div id="headerWrapper" class="maxIs">
 			<div class="logo">
 				<img src="/images/logo.jpg" alt="">
 			</div>

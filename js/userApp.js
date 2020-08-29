@@ -44,3 +44,8 @@ const app=new vue({
 	// Router
 })
 
+import './css/reset.css'
+import './css/buttons.css'
+import './css/shared.css'
+import './css/leaflet.css'
+import './css/prettyCheckbox.css'

@@ -8,7 +8,7 @@ module.exports = {
   output:{
       path:path.resolve(__dirname,"public"),
       filename:"[name].js",
-      publicPath:"/public"
+      publicPath:"/public/"
   },
   mode: 'development',
   module: {
@@ -25,14 +25,22 @@ module.exports = {
         test: /\.css$/,
         use: [
           'vue-style-loader',
-          'css-loader'
-          
-          
+          {
+            loader: 'css-loader'
+          }
         ]
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        loader:"file-loader"
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              publicPath: './',
+            }
+          }
+        ]
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/,

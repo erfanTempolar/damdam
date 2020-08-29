@@ -1,6 +1,6 @@
 <template>
 	<div id="navigation">
-		<svg @click='toggleNav()' class='hamSvg' height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+		<div class="hamIcon"><svg @click='toggleNav()' class='hamSvg' height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg></div>
 		
 		<transition name='fade' mode='out-in'>
 			<div id="navigationWrapper" class='maxIs' v-if='checkNavigation'>
@@ -125,11 +125,16 @@
 	}
 </script>
 <style scoped>
+	.hamIcon{
+		background: rgb(16,14,23);
+		widtH:100%;
+		display:flex;
+		justify-content:center
+	}
 	#navigation{
 		display: flex;
+		position: relative;
 		justify-content: center;
-		background: rgb(16,14,23);
-		/* position: relative; */
 	}
 	a{
 		color:white;
@@ -142,9 +147,13 @@
 
 	#navigationWrapper{
 		padding: 10px;
-		width: 90%;
+		width: 100%;
 		display: flex;
+		background: rgb(16,14,23);
 		justify-content: space-between;
+		position: absolute;;
+		z-index:667;
+		top:52px;
 	}
 	ul{
 		display: flex;
@@ -243,17 +252,21 @@
 	}
 	@keyframes fadeIn {
 		from{
+			transform: translateY(-100%);
 			opacity: 0;
 		}
 		to{
+			transform: translateY(0);
 			opacity: 1;
 		}
 	}
 	@keyframes fadeOut {
 		from{
+			transform: translateY(0);
 			opacity: 1;
 		}
 		to{
+			transform: translateY(-100%);
 			opacity: 0;
 		}
 	}
