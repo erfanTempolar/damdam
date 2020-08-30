@@ -126,15 +126,18 @@
 </script>
 <style scoped>
 	.hamIcon{
+		display:none;
 		background: rgb(16,14,23);
 		widtH:100%;
-		display:flex;
 		justify-content:center
 	}
 	#navigation{
 		display: flex;
 		position: relative;
 		justify-content: center;
+		width:100%;
+		background: rgb(16,14,23);
+		
 	}
 	a{
 		color:white;
@@ -142,18 +145,15 @@
 	}
 	.hamSvg{
 		margin:10px 0 10px 0;
-		display:none
 	}
 
 	#navigationWrapper{
 		padding: 10px;
 		width: 100%;
 		display: flex;
-		background: rgb(16,14,23);
 		justify-content: space-between;
-		position: absolute;;
 		z-index:667;
-		top:52px;
+		background: rgb(16,14,23);
 	}
 	ul{
 		display: flex;
@@ -169,21 +169,14 @@
 	#allCategories ul li{
 		position: relative;
 	}
-	@media (max-width: 801px)
-	{
-		#allCategories{
-			display:block
-		}
-	}
 	@media (max-width: 801px){
 		#navigation{
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 		}
-		.hamSvg{
-			margin:10px 0 10px 0;
-			display:block
+		.hamIcon{
+			display:flex
 		}
 		.right,.left{
 			width:100%;
@@ -198,6 +191,8 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
+			position: absolute;
+			top:52px;
 		}
 		ul{
 			flex-direction: column;
@@ -214,7 +209,8 @@
 			border-left:0
 		}
 		#allCategories{
-			order:3
+			order:3;
+			display:block
 		}
 		svg{
 			fill:rgb(33,162,184)

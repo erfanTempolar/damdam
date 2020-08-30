@@ -1,5 +1,5 @@
 <template>
-    <div id="userPanel" class='mainItemForUserPanel shouldCollapse'>
+    <div id="userPanel" class='mainItemForUserPanel shouldCollapse maxIs'>
         <div id="userPanelWrapper">
             <div id="userPanelNavigationOpenBtn">
                 <button class='submit' @click='toggleUserPanelNavigation()'>منوی کاربری</button>
@@ -9,7 +9,7 @@
             <user-panel-navigation v-if='shoudIShow'></user-panel-navigation>
 
                 <transition name="router" mode="out-in">
-                    <router-view class="maxIs" />
+                    <router-view  />
                 
                 </transition>
             

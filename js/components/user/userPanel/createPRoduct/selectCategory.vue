@@ -83,6 +83,12 @@
         }
 
     }
+    @media (max-width:320px)
+    {
+        #selectCategoryComponent label{
+            font-size:15pt
+        }
+    }
 </style>
 
 <script>

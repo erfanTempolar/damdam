@@ -1,6 +1,6 @@
 <template>
     <div id="createProduct" class='userPanelComp'>
-        <div id="createProductWrapper" class='maxIs'>
+        <div id="createProductWrapper">
             <form action="/testy" method="post">
                 <select-category></select-category>
                 <div id="name" class='productSection'>

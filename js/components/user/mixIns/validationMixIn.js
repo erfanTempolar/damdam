@@ -1,7 +1,6 @@
 export const validationRules = {
     methods: {
         validateUserInput(inputType, e) {
-            console.log(inputType)
             if(inputType=="name"){
                 return this.validateInput(this.rules.name, e.target)
             }else if(inputType=='email')
@@ -20,9 +19,7 @@ export const validationRules = {
             }
         },
         validateInput(rule, el) {
-            // console.log(rule)
             let test=null
-            console.log(el.value)
             if(el.value==''){
                 test=false
             }
