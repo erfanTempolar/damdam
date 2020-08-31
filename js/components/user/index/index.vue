@@ -13,7 +13,7 @@
 			
 		</div>
 		<div class="digiCardIndex shouldCollapse maxIs">
-			<digi-card :imgs='JSON.stringify(["/images/shrink.png","/images/digi2.jpg","/images/digi1.jpg","/images/digi2.jpg"])'></digi-card>
+			<digi-card :imgs='JSON.stringify(["/images/shrink.png","/images/shrink2.png","/images/digi1.jpg","/images/digi2.jpg"])'></digi-card>
 		</div>
 	</div>
 </template>

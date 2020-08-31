@@ -22,6 +22,11 @@
 				</div>
 			</div>
 		</div>
+		<div class="indicators" >
+			<div :id='index+1' v-for="(item,index) in slides" v-if='index==0' class='active' :key="index" @click='indicateSlide($event)'>{{index+1}}</div>
+			<div :id='index+1' v-else @click='indicateSlide($event)'>{{index+1}}</div>
+
+		</div>
 		<div class="controlls">
 			<div class="pre" @click="pre()"><</div>
 			<div class="next" @click='next()'>></div>
@@ -33,12 +38,16 @@
 	export default {
 		mounted(){
 			this.slides=document.querySelectorAll(".slide")
+			this.ind=document.querySelector(".indicators")
+			this.inter=setInterval(this.autoPlay,5000)
 		},
 		data(){
 			return{
 				slides:null,
 				index:0,
-				isMount:false
+				isMount:false,
+				ind:null,
+				inter:null
 			}
 		},
 		methods:{
@@ -50,6 +59,8 @@
 					this.index--
 				}
 				this.changeSlide()
+				this.updateCircleIndicator()
+				this.resetAutoPlay()
 			},
 			next(){
 				if(this.index==this.slides.length-1)
@@ -59,6 +70,8 @@
 					this.index++
 				}
 				this.changeSlide()
+				this.updateCircleIndicator()
+				this.resetAutoPlay()
 			},
 			changeSlide(){
 				for(let i=0;i<this.slides.length;i++){
@@ -66,7 +79,26 @@
 				}
 				this.slides[this.index].classList.add("active")
 			},
-			
+			indicateSlide(e){
+				this.index=e.target.id-1
+				this.changeSlide()
+				this.updateCircleIndicator()
+				this.resetAutoPlay()
+			},
+			updateCircleIndicator(){
+				for(let i=0;i<this.ind.children.length;i++){
+					this.ind.children[i].classList.remove('active')
+				}
+				this.ind.children[this.index].classList.add("active")
+			},
+			autoPlay(){
+				this.next()
+				this.updateCircleIndicator()
+			},
+			resetAutoPlay(){
+				clearInterval(this.inter)
+				this.inter=setInterval(this.autoPlay,4000)
+			}
 			
 		},
 	}	
@@ -177,7 +209,7 @@
 		}
 	@keyframes slide{
 		0%{
-			opacity:0;
+			opacity:0.2;
 			transform: scale(1.2);
 		}
 		100%{
@@ -201,6 +233,27 @@
 			object-fit: contain;
 			height:auto;
 		}
+	}
+	.indicators{
+		position: absolute;
+		left:50%;
+		bottom:30px;
+		z-index:667
+	}
+	.indicators div{
+		display:inline-block;
+		width:25px;
+		height:25px;
+		color:#ffffff;
+		background-color: #ff5722;
+		border-radius: 50%;
+		text-align: center;
+		margin:0 10px;
+		cursor:pointer;
+		transform:translateX(-50%)
+	}
+	.indicators div.active{
+		background-color: black;
 	}
 	
 </style>

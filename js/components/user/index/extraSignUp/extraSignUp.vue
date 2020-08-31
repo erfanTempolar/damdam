@@ -31,7 +31,7 @@
 
             <div id="password" class="inputs">
               <div class="formInputsWrapper">
-                <input autocomplete="off" v-model="pass" @blur="focusOut($event),startValidation('pass',$event)" class="signupFormInputs" id="userPassword" type="password"/>
+                <input autocomplete="off" @blur="focusOut($event),startValidation('pass',$event)" class="signupFormInputs" id="userPassword" type="password"/>
                 <label class="comeUpLabel" for="userPassword">رمز</label>
               </div>
               <p class="inputError">

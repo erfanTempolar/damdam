@@ -30,19 +30,19 @@
     }
     .singleDigicardWrapper{
         margin:5px;
-        width:300px        
+        width:50%        
     }
     img{
         border-radius: 16px;
         width:100%
     }
-    @media (max-width:666px){
+    /* @media (max-width:666px){
         img{
             width:100%
         }
     .singleDigicardWrapper{
         width:100%   
-    }
+    } */
 
-    }
+    /* } */
 </style>
