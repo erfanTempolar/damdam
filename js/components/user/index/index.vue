@@ -4,9 +4,14 @@
 			<div id="topOfIndexWrapper">
 				<categorie></categorie>
 				<slider></slider>	
+				
 			</div>			
+			
 		</div>
-		<flip-card></flip-card>
+		<div class="flipCard">
+			<flip-card></flip-card>
+		</div>
+		
 		<extra-sign-up></extra-sign-up>
 		<div id="allCards" class='shouldCollapse maxIs'>
 			<card cardTitle="بیشترین کلیک شده" descs='فلان لان فلان خیلی فلا هی فلان بازم فلان' :products='getProducts()'></card>

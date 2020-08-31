@@ -4,7 +4,7 @@
 		<div @click='goToLeft()' class="left"><img src="/images/left.png" alt=""></div>
 		<div @mousemove="mouseMove($event)" @mouseup="mouseup($event)" @mouseleave="mouseleave($event)" @mousedown="mouseDown($event)" class="cardWrapper">
 			
-				<div class="cardItem" v-for='(p,index) in JSON.parse(products)' :key='index'>
+				<div class="cardItem" :id='index' v-for='(p,index) in JSON.parse(products)' :key='index'>
 					<div class="productImage">
 						<a href="#"><img :src="getUrl(p)" alt=""></a>
 					</div>
@@ -23,7 +23,7 @@
 		<div @click='goToRight()' class="right"><img src="/images/left.png" alt=""></div>
 	</div>
 </template>
-<script>
+<script>	
     export default{
 		props:['cardTitle','descs','products'],
 		data(){
@@ -103,7 +103,7 @@
 		left:0;
 	}
 	.right,.left{
-		background: rgba(0,0,0,0.6);
+		background: rgba(211, 110, 28, 0.801);
 		position:absolute;
 		top:50%;
 		border-radius: 50%;
@@ -161,7 +161,7 @@
 		display: flex;
 		flex-direction: column;
         align-items: center;
-        padding:10px;
+		padding:10px;
     }
     
 	.cardItem p{

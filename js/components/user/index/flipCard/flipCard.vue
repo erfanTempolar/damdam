@@ -1,5 +1,5 @@
 <template>
-    <div id="fliped">
+    <div id="fliped" class='lax' data-lax-preset="spin fadeInOut">
         <div id="flipedWrapper">
             <card
                 title="تضمین کیفیت"
@@ -48,7 +48,7 @@
 
 <style scoped>
     #flipedWrapper{
-        max-width:900px;
+        max-width:1200px;
         display:flex;
         justify-content: center;
         flex-wrap: wrap;

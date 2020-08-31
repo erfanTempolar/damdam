@@ -1,5 +1,5 @@
 <template>
-  <div id="extraSignUp">
+  <div id="extraSignUp" class='lax'>
     <img src="/images/signupBack4.jpg" alt="">
     <div class="overLay"></div>
     <div class="extraSignUpWrapper">

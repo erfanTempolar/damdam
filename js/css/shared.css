@@ -13,7 +13,7 @@ body{
 	font-family: 'yekan';
 	max-width: 100vw;
 	position: relative;
-	/* overflow-x: hidden; */
+	overflow-x: hidden;
 	font-size: 16pt;
 	background: rgb(250, 250, 250)
 }
