@@ -25,18 +25,6 @@
                 img="/images/cup.png"
                 descs="گارانتی تمام محصولا 10 ساله"
             ></card>
-            <card 
-                class='cardInFlipcCard'
-                title="گارانتی تضمینی"
-                img="/images/cup.png"
-                descs="گارانتی تمام محصولا 10 ساله"
-            ></card>
-            <card
-                class='cardInFlipcCard'
-                title="گارانتی تضمینی"
-                img="/images/shield.png"
-                descs="گارانتی تمام محصولا 10 ساله"
-            ></card>
         </div>
     </div>
 
@@ -54,16 +42,17 @@
 
 <style scoped>
     #flipedWrapper{
-        max-width:1200px;
+        width:100%;
         display:flex;
         justify-content: center;
         flex-wrap: wrap;
+        padding:50px;
     }
     #fliped{
         width:100%;
         display:flex;
         justify-content: center;
-        margin-top:50px;
-        background:#222;
+        margin:50px 0;
+        background: #222;
     }
 </style>

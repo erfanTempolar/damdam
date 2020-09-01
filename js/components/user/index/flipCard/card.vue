@@ -26,14 +26,9 @@
         speed: 400,
         glare:false
       });
-      
-      //It also supports NodeList
-      // VanillaTilt.init(document.querySelectorAll(".your-element"));
     }
   };
 </script>
-
-
 <style scoped>
 .flip-card-front img {
   width: 50px !important;
@@ -43,9 +38,7 @@
   background-color: transparent;
   min-width: 300px !important;
   height: 300px;
-  margin-top: 50px;
   padding: 5px;
-  /* perspective: 1000px; */
 }
 
 .flip-card-inner {

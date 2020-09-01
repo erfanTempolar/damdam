@@ -96,11 +96,11 @@
 }
 .signUpWrapper{
     padding:20px;
-    max-width:max-content;
-    background: rgba(187, 186, 186, 0.7);
+    -moz-padding:20px;
 }
 .signUp{
     width:40%;
+    background: rgba(187, 186, 186, 0.678);
     max-width:max-content;
 }
 .overLay{

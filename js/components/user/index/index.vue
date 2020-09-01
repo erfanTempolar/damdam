@@ -8,9 +8,8 @@
 			</div>			
 			
 		</div>
-		<div class="flipCard">
-			<flip-card></flip-card>
-		</div>
+		<flip-card></flip-card>
+		<expanding-card></expanding-card>
 		
 		<extra-sign-up></extra-sign-up>
 		<div id="allCards" class='shouldCollapse maxIs'>
@@ -123,6 +122,7 @@
 	import card from './card/card.vue'
 	import flipCard from './flipCard/flipCard.vue'
 	import categorie from './categorie/categorie.vue'
+	import expandingCard from './expandingCard/expandingCard.vue'
 	import extraSignUp from "./extraSignUp/extraSignUp.vue"
 	export default{
 		components:{
@@ -131,7 +131,8 @@
 			categorie,
 			flipCard,
 			digiCard,
-			extraSignUp
+			extraSignUp,
+			expandingCard
 		},
 		data(){
 			return{

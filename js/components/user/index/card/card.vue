@@ -6,7 +6,7 @@
 			
 				<div class="cardItem" :id='index' v-for='(p,index) in JSON.parse(products)' :key='index'>
 					<div class="productImage">
-						<a href="#"><img :src="getUrl(p)" alt=""></a>
+						<img :src="getUrl(p)" alt="">
 					</div>
 					<div class="productTitle">
 						<a href="#"><p>خط تولید مشاین لباسش شویی تمم اتومات</p></a>
