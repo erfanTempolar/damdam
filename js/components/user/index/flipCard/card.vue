@@ -6,43 +6,52 @@
         <p>{{title}}</p>
       </div>
       <div class="flip-card-back">
-          <p>{{descs}}</p>
+        <p>{{descs}}</p>
       </div>
     </div>
   </div>
 </template>
 <script>
-
-        export default{
-            props:["descs","img",'title'],
-            methods:{
-                getImg(){
-                    return this.img
-                }
-            }
-        }
+  import tilt from "../../vannilajs/tilt.js"
+  export default {
+    props: ["descs", "img", "title"],
+    methods: {
+      getImg() {
+        return this.img;
+      },
+    },
+    mounted(){
+      VanillaTilt.init(document.querySelectorAll(".flip-card"), {
+        max: 30,
+        speed: 400,
+        glare:false
+      });
+      
+      //It also supports NodeList
+      // VanillaTilt.init(document.querySelectorAll(".your-element"));
+    }
+  };
 </script>
 
 
 <style scoped>
-.flip-card-front img{
-    width:50px !important;
-    height:50px !important
+.flip-card-front img {
+  width: 50px !important;
+  height: 50px !important;
 }
 .flip-card {
   background-color: transparent;
   min-width: 300px !important;
   height: 300px;
-  margin-top:50px;
-  padding:5px
+  margin-top: 50px;
+  padding: 5px;
   /* perspective: 1000px; */
-  
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
-  border:1px solid rgb(216, 205, 205);
+  border: 1px solid rgb(216, 205, 205);
   height: 100%;
   text-align: center;
   transition: transform 0.6s;
@@ -61,8 +70,8 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -77,8 +86,8 @@
   color: white;
   transform: rotateY(180deg);
 }
-.flip-card-back p{
-    max-width: 80%;
-    text-align: center;
+.flip-card-back p {
+  max-width: 80%;
+  text-align: center;
 }
 </style>
