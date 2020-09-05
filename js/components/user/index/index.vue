@@ -19,6 +19,9 @@
 		<div class="digiCardIndex shouldCollapse maxIs">
 			<digi-card :imgs='JSON.stringify(["/images/shrink.png","/images/shrink2.png","/images/digi1.jpg","/images/digi2.jpg"])'></digi-card>
 		</div>
+		<div class="customers">
+			
+		</div>
 	</div>
 </template>
 

@@ -4,7 +4,8 @@
             <ul>
                 <li @click="toggleUserPanelNavigation(),toggleBodyOverFlow()"> <router-link to="/userPanel">پروفایل</router-link> <img class='icon' src="/images/profile.png" alt=""></li>
                 <li @click="toggleUserPanelNavigation(),toggleBodyOverFlow()"><router-link to="/userPanel/createProduct">اضافه کردن محصول برای فروش</router-link><img src="/images/sell.png" class='icon' alt=""></li>
-                <li @click="toggleUserPanelNavigation(),toggleBodyOverFlow()"><router-link to="/userPanel/usersList">لیست کاربران</router-link><img src="/images/sell.png" class='icon' alt=""></li>
+                <li @click="toggleUserPanelNavigation(),toggleBodyOverFlow()"><router-link to="/userPanel/usersList">لیست کاربران</router-link><img src="/images/clipboard.png" class='icon' alt=""></li>
+                <li @click="toggleUserPanelNavigation(),toggleBodyOverFlow()"><router-link to="/userPanel/createBlogPost">اضافه کردن پست بلاگ</router-link><img src="/images/sell.png" class='icon' alt=""></li>
 
             </ul>
         </div>

@@ -9,12 +9,13 @@
 
 						<li><a href="/signin">ورود</a></li>
 						<li><a href="/signup">ثبت نام</a></li>
+						<li><a href="/userPanel">پنل کاربری</a></li>
 
 					</ul>
 				</div>
-				<div id="allCategories">
+				<div ref='allCategories' id="allCategories">
 					<ul>
-						<li @click='toggleSubMenu();checkTop($event)'>
+						<li @click='toggleSubMenu();checkTop($event),shouldDisplay()'>
 							دسته بندی محصولات
 						</li>
 					</ul>
@@ -27,7 +28,7 @@
 						<li><a href="/">خانه</a></li>
 						<li><a href="#">درباره ما</a></li>
 						<li><a href="/blog">وبلاگ</a></li>
-						<li><a href="/userPanel">پنل کاربری</a></li>
+						
 						
 					</ul>
 
@@ -95,6 +96,9 @@
 						this.toggleSubMenu()
 					}
 				}
+			},
+			shouldDisplay(){
+				
 			}
 			
 			

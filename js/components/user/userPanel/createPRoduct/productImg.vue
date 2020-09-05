@@ -6,16 +6,24 @@
                             عکس محصول را وارد کنید
                         </label>
                         <div id="images">
-                            <div id="image1Wrapper" class='imagesInput'>
-                                <label for="image1" class='uploadImage'>
+                            <div class="increaseImgNum">
+                                <label for="">اضافه کردن عکس تا حداکثر ده تا</label>
+                                <button @click.prevent='imgNums+=1' class="submit">اضافه کردن عکس</button>
+                            </div>
+
+
+                            <div class="allImagesWrapper">
+                                <div class='imagesInput' v-for="item in imgNums" :key='item'>
+                                <label :for="item" class='uploadImage'>
                                      <i class="fas fa-plus"></i>
-                                    انتخاب عکس اول
+                                    انتخاب عکس
                                    
-                                    <input @change='imageChanged($event)' type="file" class='prodctImg' id=image1>
+                                    <input @change='imageChanged($event)' type="file" class='prodctImg' :id='item'>
                                     
                                 </label>
+
                                 <div class="imageUrl">
-                                    <img class='userProductImg' src="" alt="">
+                                    <img class='userProductImg' name=productImages[] src="" alt="">
                                     <transition name='fade' mode='out-in'>
                                         <div @mouseleave='blur($event)' @mouseover='focus($event)' class="imgDetails">
                                             <div class="imgName">
@@ -27,60 +35,29 @@
                                         </div>
                                     </transition>
                                 </div>
-                            </div>
-                            <div id="image2wrapper" class='imagesInput'>
-                                <label for="image2" class='uploadImage'>
-                                    <i class="fas fa-plus"></i>
-                                    انتخاب عکس دوم
-                                    
-                                    <input @change='imageChanged($event)' type="file" class='prodctImg' id=image2>
-                                    
-                                </label>
-                                <div class="imageUrl">
-                                    <img class='userProductImg' src="" alt="">
-                                    <transition name='fade' mode='out-in'>
-                                        <div @mouseleave='blur($event)' @mouseover='focus($event)' class="imgDetails">
-                                            <div class="imgName">
-                                                <p>teksmkmkdmskdmskmdksmst</p>
-                                            </div>
-                                            <div class="imgSize">
-                                                <p>test</p>
-                                            </div>
-                                        </div>
-                                    </transition>
                                 </div>
                             </div>
-                            <div id="image3wrapper" class='imagesInput'>
-                                <label for="image3" class='uploadImage'>
-                                    <i class="fas fa-plus"></i>
-                                   انتخاب عکس سوم
-                                   
-                                    
-             
-                                    <input @change='imageChanged($event)' type="file" class='prodctImg' id=image3>
-                                    
-                                </label>
-                                <div class="imageUrl">
-                                    <img class='userProductImg' src="" alt="">
-                                    <transition name='fade' mode='out-in'>
-                                        <div @mouseleave='blur($event)' @mouseover='focus($event)' class="imgDetails">
-                                            <div class="imgName">
-                                                <p>teksmkmkdmskdmskmdksmst</p>
-                                            </div>
-                                            <div class="imgSize">
-                                                <p>test</p>
-                                            </div>
-                                        </div>
-                                    </transition>
-                                </div>
-                            </div>
+
+
                         </div>
                     </div>
                 </div>
-    
 </template>
 <script>
 export default {
+    data(){
+        return{
+            imgNums:1
+        }
+    },
+    watch:{
+        imgNums:function(value){
+            if(value>10)
+            {
+                this.imgNums=10
+            }
+        }
+    },
     methods:{
         clickImage(){
                 const imageInput=document.querySelector("#productImgInput")
@@ -192,6 +169,7 @@ export default {
     .imagesInput{
         width:200px;
         display: flex;
+        margin:10px;
         flex-direction:column;
         align-items: center;
     }
@@ -210,7 +188,9 @@ export default {
         display: flex;
         width:100%;
         margin-top:10px;
-        justify-content: space-evenly;
+        align-items: center;
+        flex-direction:column;
+        flex-wrap: wrap;
     }
     .imageUrl{
         width:200px;
@@ -224,12 +204,26 @@ export default {
         align-items: center;
         position: relative;
     }
+    .allImagesWrapper{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
     .userProductImg:hover + div{
         display:block
     }
     #productImgInput
     {
         display:none
+    }
+    .increaseImgNum{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin:10px 0;
+    }
+    .increaseImgNum .submit{
+        margin-top:10px;
     }
     @media (max-width:850px)
     {

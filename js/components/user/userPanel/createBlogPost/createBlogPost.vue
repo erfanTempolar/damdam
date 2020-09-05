@@ -1,17 +1,50 @@
 <template>
-  <div id="productDescs" class="productSection">
-    <div id="productDescsWrapper">
-      <label for="tinymce">توضیحات محصول را بنویسید</label>
-      <br />
-      <textarea id="editor" name="myeditor"></textarea>
+    <div id="createBlogPost">
+        <div id="createBlogPostWrapper">
+            <form action="">
+                <div class="textArea createBlogPostItam">
+                    <textarea id='createBlogPostEditor' name="blogPostContent"></textarea>
+                </div>
+                <slicer></slicer>
+                <div class="image createBlogPostItam">
+                    <label for="chooseFile">عکس شاخص را انتخاب کنید</label>
+                    <input type="file" name="image" id="chooseFile">
+                </div>
+                <slicer></slicer>
+                <div class="createBlogPostItam chooseCategory">
+                  <label for="">دسته بندی را انتخاب کنید</label>
+
+                  <input list="browsers" name="زشفثلخقغ" id="browser">
+
+                  <datalist id="browsers">
+                    <option value="شیرینگ"></option>
+                    <option value="خط تولید پنیر پیتزا"></option>
+                    <option value="Chrome"></option>
+                    <option value="Opera"></option>
+                    <option value="Safari"></option>
+                  </datalist>
+
+
+                </div>
+                <slicer></slicer>
+                <div class="sendReq createBlogPostItam">
+                    <button class="submit">ثبت پست</button>
+                </div>
+            </form>
+
+        </div>
     </div>
-  </div>
+
+
 </template>
 
 <script>
-export default {
-  methods: {
-    init() {
+import slicer from "../../template/slicer/slicer.vue"
+export default{
+  components:{
+    slicer
+  },
+    mounted(){
       tinymce.init({
         setup: function (editor) {
           /* example, adding a group toolbar button */
@@ -22,13 +55,14 @@ export default {
           });
         },
         language: "fa",
-        selector: "#editor",
-        plugins: "image code table lists",
+        selector: "#createBlogPostEditor",
+        plugins: "image code table lists link preview",
         toolbar:
-          "undo redo | link image | code fontsizeselect forecolor backcolor numlist bullist alignment bold",
-        menubar: "table",
+          "undo redo | link image | code fontsizeselect forecolor backcolor numlist bullist alignment bold italic link table preview",
+        menubar: "table ",
         fontsize_formats: "11px 12px 14px 16px 18px 24px 36px 48px",
         width: "100%",
+        height:"400",
         images_upload_url: "/blobyImage",
         image_title: true,
         automatic_uploads: true,
@@ -100,44 +134,43 @@ export default {
         content_style:
           "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
       });
-	},
-	mounted(){
-		this.init()
-	}
-  },
+    
+    }
+}
 
-  mounted() {
-    this.init();
-  },
-};
 </script>
 
-<style scoped>
-label {
-  color: #0061af;
-  font-size: 17pt;
-  font-weight: lighter;
-}
-#productDescsWrapper {
-  padding: 10px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-#productDescs textarea {
-  width: 100%;
-  height: 500px;
-  padding: 5px;
-}
-#productDescsEditor {
-  width: 100%;
-  height: 500px;
-}
-.ck.ck-editor {
-  width: 100%;
-}
-#aria_1852541166151599251559412 {
-  display: none;
-}
+
+<style>
+
+    #createBlogPost{
+        margin-top:50px;
+    }
+    .createBlogPostItam{
+        width:100%;
+        display:flex;
+        justify-content: center;
+        margin-top:50px
+    }
+    .image{
+      display:flex;
+      flex-direction:column;
+      align-items: center;
+    }
+    .image input{
+      margin-top:20px;
+      width:250px;
+    }
+    .chooseCategory{
+      display: flex;  
+      flex-direction:column;
+      align-items: center;
+    }
+    .chooseCategory input{
+      margin-top:10px;
+    }
+    #slicer{
+      margin-top:10px;
+    }
+
 </style>
