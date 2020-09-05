@@ -9,7 +9,7 @@ app.set('views', 'views')
 app.use(b.urlencoded({ extended: false }))
 app.use(b.json())
 app.use(fileUpload());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'))
 const r=express.Router()
 app.use('/scripts', express.static(__dirname + '/node_modules/bootstrap/dist/'));
 
