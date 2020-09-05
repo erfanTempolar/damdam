@@ -139,7 +139,7 @@
 	#flatMenu{
 		background: white;
 		position: absolute;
-		z-index:666;
+		z-index:668;
 		top:0;
 		background: rgba(0,0,0,0.5);
 		width:100%;
@@ -302,6 +302,12 @@
 		mounted(){
 			this.adjustFromTop(document.querySelector("#flatMenuWrapper"))
 			this.toggleBodyOverFlow('hidden')
+			window.addEventListener("resize",()=>{
+				if(window.innerWidth>801)
+				{
+					this.toggleBodyOverFlow()
+				}
+			})
 
 		}
 		

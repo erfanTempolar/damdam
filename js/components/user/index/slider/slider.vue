@@ -237,8 +237,9 @@
 	.indicators{
 		position: absolute;
 		left:50%;
-		bottom:30px;
-		z-index:667
+		bottom:15px;
+		z-index:667;
+		transform:translateX(-50%)
 	}
 	.indicators div{
 		display:inline-block;

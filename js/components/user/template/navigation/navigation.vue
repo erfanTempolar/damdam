@@ -26,7 +26,7 @@
 					<ul>
 						<li><a href="/">خانه</a></li>
 						<li><a href="#">درباره ما</a></li>
-						<li><a href="#">وبلاگ</a></li>
+						<li><a href="/blog">وبلاگ</a></li>
 						<li><a href="/userPanel">پنل کاربری</a></li>
 						
 					</ul>
@@ -105,9 +105,9 @@
 			}
 		},
 		mounted(){
-			if(window.innerWidth>=641)
+			if(window.innerWidth>801)
 			{
-				this.showNavigation=true
+				this.checkNavigation=true
 			}
 			window.addEventListener("resize",this.checkNavigationMethod)
 			window.addEventListener("resize",this.closeSubMenuIfOpen)
@@ -115,7 +115,7 @@
 		data(){
 			return{
 				showSubMenu:true,
-				checkNavigation:true
+				checkNavigation:false
 			}
 		},
 		components:{
@@ -133,7 +133,6 @@
 	}
 	#navigation{
 		display: flex;
-		position: relative;
 		justify-content: center;
 		width:100%;
 		background: rgb(16,14,23);
@@ -192,7 +191,8 @@
 			align-items: center;
 			justify-content: center;
 			position: absolute;
-			top:52px;
+			top:305px;
+			z-index:667
 		}
 		ul{
 			flex-direction: column;

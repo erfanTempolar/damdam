@@ -2,7 +2,7 @@
     <div id="doneMessage">
         <div id="doneMessageWrapper">
             <img src="/images/check.png" alt="">
-            <p>درخواست شما با موفقیت انجام</p>
+            <p>درخواست شما با موفقیت انجام شد</p>
         </div>
     </div>
 </template>
@@ -11,12 +11,23 @@
     #doneMessage{
         display:none;
         position: fixed;
-        right:0;
+        right:20px;
         top:50px;
-        background: rgb(176, 240, 179);
+        background: rgb(51,188,70);
         color:black;
         border-radius: 5px;
-        z-index: 666;
+        z-index: 20000;
+        animation :comeIn 0.5s linear
+    }
+    @keyframes comeIn {
+        0%{
+            right:-100%;
+            transform:rotateZ(180deg)
+        }
+        100%{
+            right:20px;
+            transform: rotateZ(0);
+        }
     }
     #doneMessageWrapper{
         display:flex;
@@ -24,7 +35,7 @@
         align-items: center;
     }
     p{
-        font-size:12pt
+        font-size:15pt
     }
     img{
         width:40px;

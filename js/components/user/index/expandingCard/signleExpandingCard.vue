@@ -60,6 +60,12 @@
         opacity:1;
         margin-top:-40px
     }
+    @media (max-width:679px){
+        .singleExpandingCard:not(:first-child)
+        {
+            margin-top:100px
+        }
+    }
 </style>
 
 

@@ -61,6 +61,7 @@
 		flex-direction: column;
 		align-items: center;
 		background: rgb(16,14,23);
+		
 		/* position: relative; */
 	}
 	#footer p,#footer a{
@@ -83,6 +84,9 @@
 		}
 		form p{
 			text-align: center;
+		}
+		#footer{
+			padding-bottom:30px
 		}
 		#footerWrapper > div{
 			margin-top: 20px;

@@ -1,7 +1,7 @@
 <template>
     <div id="createProduct" class='userPanelComp'>
         <div id="createProductWrapper">
-            <form action="/testy" method="post">
+            <form action="/blob" method="post">
                 <select-category></select-category>
                 <div id="name" class='productSection'>
                     <div id="nameWrapper">

@@ -15,7 +15,13 @@ import filtering from "./components/user/prodcuts/filtering.vue"
 import userPanel from "./components/user/userPanel/userPanel.vue"
 import category from "./components/user/category/category.vue"
 import doneMessage from './components/user/template/doneMessage/doneMessage.vue'
+import blog from "./components/blog/blog/blog.vue"
+import singleBlogPost from './components/blog/blogPost/blogPost.vue'
 import {routes} from "./routes.js"
+// import ckeditor from 'ckeditor4-vue';
+
+// vue.use(ckeditor);
+// import "./cckk/build/ckeditor.js"
 vue.use(vueRouter)
 
 const router=new vueRouter({
@@ -37,7 +43,9 @@ const app=new vue({
 		filtering,
 		userPanel,
 		category,
-		doneMessage
+		doneMessage,
+		blog,
+		singleBlogPost
 	},
 	store,
 	router,
@@ -49,3 +57,8 @@ import './css/buttons.css'
 import './css/shared.css'
 import './css/leaflet.css'
 import './css/prettyCheckbox.css'
+
+
+
+
+

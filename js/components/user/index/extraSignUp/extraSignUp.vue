@@ -15,7 +15,7 @@
           <form action>
             <div id="email" class="inputs">
               <div class="formInputsWrapper">
-                <input autocomplete="off" @blur="focusOut($event),startValidation('email',$event)" class="signupFormInputs" id="userEmail" type="text"/>
+                <input autocomplete="off" @blur="focusOut($event),startValidation('email',$event)" class="signupFormInputs inputWithLabelThatShouldStay" id="userEmail" type="text"/>
                 <label class="comeUpLabel" for="userEmail">ایمیل</label>
               </div>
               <p class="inputError">فرمت ایمیل اشتباه است</p>
@@ -23,7 +23,7 @@
 
             <div id="phoneNumber" class="inputs">
               <div class="formInputsWrapper">
-                <input autocomplete="off" @blur="focusOut($event),startValidation('phone',$event)" class="signupFormInputs" id="userPhone" type="text"/>
+                <input autocomplete="off" @blur="focusOut($event),startValidation('phone',$event)" class="signupFormInputs inputWithLabelThatShouldStay" id="userPhone" type="text"/>
                 <label class="comeUpLabel" for="userPhone">شماره تلفن همراه</label>
               </div>
               <p class="inputError">فرمت شماره اشتباه است</p>
@@ -31,7 +31,7 @@
 
             <div id="password" class="inputs">
               <div class="formInputsWrapper">
-                <input autocomplete="off" @blur="focusOut($event),startValidation('pass',$event)" class="signupFormInputs" id="userPassword" type="password"/>
+                <input autocomplete="off" @blur="focusOut($event),startValidation('pass',$event)" class="signupFormInputs inputWithLabelThatShouldStay" id="userPassword" type="password"/>
                 <label class="comeUpLabel" for="userPassword">رمز</label>
               </div>
               <p class="inputError">
@@ -41,7 +41,7 @@
             </div>
             <div id="passwordConf" class="inputs">
               <div class="formInputsWrapper">
-                <input autocomplete="off" @blur="focusOut($event),checkConfirmation($event)" id="userPasswordCond" class="signupFormInputs" name="passConf" type="password"/>
+                <input autocomplete="off" @blur="focusOut($event),checkConfirmation($event)" id="userPasswordCond inputWithLabelThatShouldStay" class="signupFormInputs" name="passConf" type="password"/>
                 <label class="comeUpLabel" for="userPasswordCond">رمز را دوباره وارد کنید</label>
               </div>
               <p class="inputError">با رمز اصلی برابر نیست</p>

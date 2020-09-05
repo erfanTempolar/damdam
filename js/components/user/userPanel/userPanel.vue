@@ -9,7 +9,7 @@
             <user-panel-navigation v-if='shoudIShow'></user-panel-navigation>
 
                 <transition name="router" mode="out-in">
-                    <router-view  />
+                    <keep-alive><router-view  /></keep-alive>
                 
                 </transition>
             

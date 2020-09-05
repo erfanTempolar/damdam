@@ -40,8 +40,6 @@
         justify-content: center;
         flex-wrap:wrap;
         margin-top:100px;
-        /* height:auto; */
-        height:450px
     }
 </style>>
 

@@ -238,4 +238,15 @@ export default {
             align-items: center;
         }
     }
+    .fade-enter-active{
+        animation:fadeIn .5s linear
+    }
+    @keyframes fadeIn {
+        from{
+            opacity:0;
+        }
+        to{
+            opacity:1
+        }
+    }
 </style>

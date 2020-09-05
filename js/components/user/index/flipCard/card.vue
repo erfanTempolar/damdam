@@ -21,11 +21,11 @@
       },
     },
     mounted(){
-      VanillaTilt.init(document.querySelectorAll(".flip-card"), {
-        max: 30,
-        speed: 400,
-        glare:false
-      });
+      // VanillaTilt.init(document.querySelectorAll(".flip-card"), {
+      //   max: 30,
+      //   speed: 400,
+      //   glare:false
+      // });
     }
   };
 </script>
