@@ -23,9 +23,9 @@ export default {
         },
         language: "fa",
         selector: "#editor",
-        plugins: "image code table lists",
+        plugins: "image code table lists preview",
         toolbar:
-          "undo redo | link image | code fontsizeselect forecolor backcolor numlist bullist alignment bold",
+          "undo redo | link image | code fontsizeselect forecolor backcolor numlist bullist alignment bold preview",
         menubar: "table",
         fontsize_formats: "11px 12px 14px 16px 18px 24px 36px 48px",
         width: "100%",

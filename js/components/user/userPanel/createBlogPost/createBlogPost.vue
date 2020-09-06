@@ -58,8 +58,8 @@ export default{
         selector: "#createBlogPostEditor",
         plugins: "image code table lists link preview",
         toolbar:
-          "undo redo | link image | code fontsizeselect forecolor backcolor numlist bullist alignment bold italic link table preview",
-        menubar: "table ",
+          "undo redo | link image | code fontsizeselect forecolor backcolor numlist bullist alignment bold italic table preview",
+  
         fontsize_formats: "11px 12px 14px 16px 18px 24px 36px 48px",
         width: "100%",
         height:"400",
@@ -141,7 +141,7 @@ export default{
 </script>
 
 
-<style>
+<style scoped>
 
     #createBlogPost{
         margin-top:50px;
